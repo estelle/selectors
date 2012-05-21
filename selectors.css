@@ -353,19 +353,15 @@ div:not(.current).reduced {
 .objectlink {
 	position:absolute;
 	top:0; right:0;
-	border-radius: 0 10px 0 0;
 	color: white; 
 	background: #000; 
 	padding: 3px 5px; 
 	border: none;
 }
-header .objectlink {top:-10px;}
+header .objectlink {}
 .slide.object {
 	padding:0;
 }
-object {
-	border-radius: 12px;
-	}
 .object object {width: 100%; height: 100%;}
 [contenteditable]:focus {box-shadow:none; outline:1px dashed white;}
 .col2 {
