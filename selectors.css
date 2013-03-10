@@ -30,39 +30,26 @@ body {
 }
 .button {
 color: #FFFFFF;
-text-decoration: none;
-background-image: -webkit-gradient(linear, top, bottom, from(rgba(255,255,255,0.4)), to(rgba(255,255,255,0.1)));
-background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-background-image: -moz-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-background-image: -ms-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-background-image: -moz-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-background-image: -o-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-background-image: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
+-webkit-transform: translatez(0);
 overflow: hidden;
-max-width: 80px;
-white-space: nowrap;
-text-overflow: ellipsis;
 font-family: Helvetica;
-font-size: 14px;
-font-weight: bold;
--moz-border-radius: 4px;
-border-radius: 4px;
-height: 30px;
-padding: 0 10px;
--moz-background-size: 100% 50%;
-background-size: 100% 50%;
-background-repeat: no-repeat;
-border: 1px solid #2F353E;
--webkit-box-shadow: 0 1px 0 rgba(255,255,255, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
--moz-box-shadow: 0 1px 0 rgba(255,255,255, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
-box-shadow: 0 1px 0 rgba(255,255,255, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+font-size: 24px;
+letter-spacing: 1px;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+background-color: rgba(0,0,0,0.4);
+padding: 4px 10px;
+		float:right;
+}
+@media screen and (max-height: 700px){
+	.button {
+	position: relative;
+	top: 200px;}
 }
 .cancel {
 float: left;
-background-color: #4A6C9B;
-border-color: #2F353E #375073 #375073;
 }
+.button:hover {
+text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 
 .key {
 	color: black;
@@ -85,7 +72,7 @@ border-color: #2F353E #375073 #375073;
 	display: block;
 	overflow: hidden;
 	background: #000;
-	background-image: 
+	background-image:
 		-webkit-linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
 		-webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
 		-webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
@@ -143,7 +130,7 @@ border-color: #2F353E #375073 #375073;
 	padding-top: 10px;
 	border-radius: 15px;
 	border: 5px solid #fff;
-	
+
 	box-shadow: 0 0 20px rgba(0,0,0,0.6), inset 0 0 6px rgba(0,0,0,0.4);
 }
 .slide.intro {
@@ -340,22 +327,22 @@ div:not(.current).reduced {
 	background: none;
 	background-color: #fff;
 }
-    
+
 /* OBJECT PAGES */
 .object header {
-	position:absolute; 
-	top: 10px; 
-	width: 100%; 
-	text-align:center; 
-	background-color: rgba(255,255,255,0.9); 
+	position:absolute;
+	top: 10px;
+	width: 100%;
+	text-align:center;
+	background-color: rgba(255,255,255,0.9);
 	left:0;
 }
 .objectlink {
 	position:absolute;
 	top:0; right:0;
-	color: white; 
-	background: #000; 
-	padding: 3px 5px; 
+	color: white;
+	background: #000;
+	padding: 3px 5px;
 	border: none;
 }
 header .objectlink {}
@@ -365,11 +352,11 @@ header .objectlink {}
 .object object {width: 100%; height: 100%;}
 [contenteditable]:focus {box-shadow:none; outline:1px dashed white;}
 .col2 {
-	-webkit-columns: 2 2em;	
+	-webkit-columns: 2 2em;
 }
 .intro .col2 {
 	margin-top: -10px;
-	font-size: 70%;	
+	font-size: 70%;
 }
 
 dt {
@@ -490,7 +477,7 @@ p.firstletter {width: 400px;
 	line-height: 1;
 	color: #900;
 	padding: 0 4px 2px 0;
-	font-weight: bold;		
+	font-weight: bold;
 }
 .count li {display: inline-block; text-align:center;}
 .count li:nth-of-type(even) {background-color: white;}
@@ -521,7 +508,7 @@ input:in-range { background-color:lightgreen;}
 
 a {border-bottom: 1px dotted black;}
 .count li:nth-of-type(odd) {
-	  background: 
+	  background:
         -webkit-linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
         -webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
         -webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
@@ -532,14 +519,14 @@ a {border-bottom: 1px dotted black;}
         red 14%, orange 15%, orange 28%, yellow 29%, yellow 42%, green 43%, green 56%, blue 57%, blue 70%, magenta 71%, magenta 85%, purple 86%), white;
     -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
 	color: white;
-	
+
 }
 
 
 @media screen and (-webkit-min-device-pixel-ratio:0){
 .textmask, h1, a{
 
-    background: 
+    background:
         -webkit-linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
         -webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
         -webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
@@ -549,14 +536,14 @@ a {border-bottom: 1px dotted black;}
         -webkit-linear-gradient(left,
         red 14%, orange 15%, orange 28%, yellow 29%, yellow 42%, green 43%, green 56%, blue 57%, blue 70%, magenta 71%, magenta 85%, purple 86%), white;
     -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
-    
+
 -webkit-background-clip: text,text,text,text,text,text,text,text, border;
 color: rgba(0,0,0,0);
     }
-	
+
 .invert h1{
 
-    background: 
+    background:
         -webkit-linear-gradient(left, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 50%),
         -webkit-linear-gradient(left, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 40%),
         -webkit-linear-gradient(left, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2) 60%),
@@ -566,12 +553,12 @@ color: rgba(0,0,0,0);
         -webkit-linear-gradient(left,
         red 14%, orange 15%, orange 28%, yellow 29%, yellow 42%, green 43%, green 56%, blue 57%, blue 70%, magenta 71%, magenta 85%, purple 86%), white;
     -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
-    
+
 -webkit-background-clip: text,text,text,text,text,text,text,text, border;
 color: rgba(0,0,0,0);
     }
 
 .normal h1.textmask {
-	font-size: 200%;	
+	font-size: 200%;
 }
 }
