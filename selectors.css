@@ -452,7 +452,7 @@ columns: 2 1em;
   color: #990000;
 }
 .structural tr:nth-of-type(3n-1) {
-  font-style: italic;
+  text-align: right;
 }
 /* SELECTION SLIDE */
  .thisSlide *::selection {
