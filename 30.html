@@ -7,7 +7,11 @@
     <title>Selectors: Select This!</title>
 <link rel="stylesheet" href="selectors.css"/>
 <style>
-
+.thisSlide {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
 
 </style>
 </head>
@@ -584,8 +588,7 @@ already exist.<br>
     <pre contenteditable>.thisSlide *::selection {
    background-color: #990000;
    color: #ffffff;
-}
-    </pre>
+}</pre>
     <p class="notes">Prefix with -moz- for Firefox<br>
     Use single colon because of IE</p>
 <pre class="contenteditable">.thisSlide {
