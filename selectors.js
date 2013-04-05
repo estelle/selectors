@@ -250,10 +250,14 @@ Slide.prototype = {
   doc.addEventListener('touchstart',  function(e) { _t.handleTouchStart(e); }, false);
   doc.addEventListener('touchend', function(e) { _t.handleTouchEnd(e); }, false);
   window.addEventListener('popstate', function(e) { _t.go(e.state); }, false);
-  doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
-  doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
+
+if('ontouchstart' in window || 'createTouch' in document || (window.DocumentTouch && document instanceof DocumentTouch)){
   doc.getElementById('back').addEventListener('touchend', function(e) {_t.prev();}, false);
   doc.getElementById('next').addEventListener('touchend', function(e) {_t.next();}, false);
+}else {
+  doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
+  doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
+}
   this._update();
 };
 
