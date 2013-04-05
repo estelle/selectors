@@ -252,8 +252,8 @@ Slide.prototype = {
   window.addEventListener('popstate', function(e) { _t.go(e.state); }, false);
   doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
   doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
-  doc.getElementById('back').addEventListener('touchend', function(e) {alert('foo');_t.prev();}, false);
-  doc.getElementById('next').addEventListener('touchend', function(e) {alert('bar');_t.next();}, false);
+  doc.getElementById('back').addEventListener('touchend', function(e) {_t.prev();}, false);
+  doc.getElementById('next').addEventListener('touchend', function(e) {_t.next();}, false);
   this._update();
 };
 
