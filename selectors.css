@@ -111,11 +111,6 @@ text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 	top: 50%;
 	margin-top: -350px;
 	background-color: #eee;
-	-webkit-transition: all 0.25s ease-in-out;
-	-moz-transition: all 0.25s ease-in-out;
-	-ms-transition: all 0.25s ease-in-out;
-	-o-transition: all 0.25s ease-in-out;
-	transition: all 0.25s ease-in-out;
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
@@ -127,6 +122,24 @@ text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 	border: 5px solid #fff;
 
 	box-shadow: 0 0 20px rgba(0,0,0,0.6), inset 0 0 6px rgba(0,0,0,0.4);
+}
+@media screen and (min-width: 1000px){
+	.slide {
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-ms-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+	}
+}
+@media screen and (max-width: 960px){
+	.current {
+	-webkit-transform: scale(1) translatez(0);
+	-moz-transform: scale(1) translatez(0);
+	-ms-transform: scale(1) translatez(0);
+	-o-transform: scale(1) translatez(0);
+	transform: scale(1) translatez(0);
+	}
 }
 .slide.intro {
 	text-align: center;
