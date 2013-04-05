@@ -583,7 +583,7 @@ already exist.<br>
 -->
 
 <!-- ::selection -->
-<div class="slide normal thisSlide foo">
+<div class="slide normal thisSlide">
      <header><h1>::selection</h1></header>
      <section class="content">
 
@@ -591,8 +591,23 @@ already exist.<br>
    background-color: #990000;
    color: #ffffff;
 }</pre>
-    <p class="notes">Prefix with -moz- for Firefox<br>
+    <p>Prefix with -moz- for Firefox<br>
     Use single colon because of IE</p>
+
+
+     </section>
+    </div>
+
+    <!-- ::selection -->
+<div class="slide normal thisSlide foo">
+     <header><h1>Disabling ::selection</h1></header>
+     <section class="content">
+
+    <pre contenteditable>.thisSlide *::selection {
+   background-color: #990000;
+   color: #ffffff;
+}</pre>
+<p>For mobile but impacts desktop too:</p>
 <pre class="contenteditable">.thisSlide {
   -webkit-tap-highlight-color: #bada55;
   -webkit-user-select: none;
