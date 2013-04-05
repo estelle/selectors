@@ -11,7 +11,7 @@
 		if (typeof id == 'string') { return doc.getElementById(id); }
 		return id;
 	},
-	
+
 	query = function(query, root) {
 	  if (!query) { return []; }
 		if (typeof query != 'string') { return toArray(query); }
@@ -28,18 +28,18 @@
 			root.id = root.id || ('qUnique' + (ctr++));
 			query = '#' + root.id + ' ' + query;
 		}
-	
+
 		// don't choke on something like ".yada.yada >"
 		if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
 		return toArray(doc.querySelectorAll(query));
 	},
-	
+
 	strToArray = function(s) {
 		if (typeof s == 'string' || s instanceof String) {
 			if (s.indexOf(' ') < 0) {
 				a1[0] = s;
 				return a1;
-			} 
+			}
 			else {
 					return s.split(spaces);
 			}
@@ -57,8 +57,8 @@
 		}
 	  }
 	  node.className = cls.trim();
-	}, 
-	
+	},
+
 	removeClass = function(node, classStr) {
 		  var cls;
 		  if (classStr !== undefined) {
@@ -71,13 +71,13 @@
 		  } else {
 			cls = '';
 		  }
-		
+
 		  if (node.className != cls) {
 			node.className = cls;
 		  }
-		
+
 	  },
-	
+
 	  toggleClass = function(node, classStr) {
 		  var cls = ' ' + node.className + ' ';
 		  if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
@@ -99,8 +99,8 @@
   	 	canTransition = (function() {
 		  var ver = parseFloat(ua.split('Version/')[1]) || undefined;
 		  // test to determine if this browser can handle CSS transitions.
-		  var cachedCanTransition = 
-		
+		  var cachedCanTransition =
+
 			(isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
 		  return function() { return cachedCanTransition; }
 
@@ -252,6 +252,8 @@ Slide.prototype = {
   window.addEventListener('popstate', function(e) { _t.go(e.state); }, false);
   doc.getElementById('back').addEventListener('click', function(e) {_t.prev();}, false);
   doc.getElementById('next').addEventListener('click', function(e) {_t.next();}, false);
+  doc.getElementById('back').addEventListener('touchend', function(e) {_t.prev();}, false);
+  doc.getElementById('next').addEventListener('touchend', function(e) {_t.next();}, false);
   this._update();
 };
 
@@ -301,9 +303,9 @@ SlideShow.prototype = {
 
 
   _notesOn: true,
-	
+
  showNotes: function() {
-	 
+
     var isOn = this._notesOn = !this._notesOn;
     query('.notes').forEach(function(el) {
       el.style.display = (isOn) ? 'block' : 'none';
@@ -321,7 +323,7 @@ SlideShow.prototype = {
       if (isOpera) {
 			delta = -delta;
 		  }
-      } 
+      }
 	  else if (e.detail) {
         delta = -e.detail/3;
       }
@@ -339,7 +341,7 @@ SlideShow.prototype = {
     handleKeys: function(e) {
       // disable keys for these elements
       if (/^(input|textarea|pre|object)$/i.test(e.target.nodeName)) return;
-	 
+
 
       switch (e.keyCode) {
 		  case 37: // left arrow
@@ -356,7 +358,7 @@ SlideShow.prototype = {
 			 this.switch3D(); break;
     	}
     },
-	
+
     _touchStartX: 0,
     handleTouchStart: function(e) {
     this._touchStartX = e.touches[0].pageX;
@@ -380,4 +382,3 @@ SlideShow.prototype = {
 
 
 
-  
