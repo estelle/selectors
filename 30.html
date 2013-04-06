@@ -14,7 +14,14 @@
   -webkit-user-select: none;
   -webkit-touch-callout: none;
 }
-
+.beforeafter:before {
+  content: "before - ";
+  font-weight: bold;
+}
+.beforeafter:after {
+  content: " - after";
+  font-weight: bold;
+  }
 </style>
 </head>
 
@@ -558,7 +565,39 @@ already exist.<br>
      </section>
     </div>
 
+<!-- :before and :after  -->
+<div class="slide normal">
+     <header><h1>::before and ::after</h1></header>
 
+
+     <section class="content">
+  <pre contenteditable>p:before {
+  content: "before content - ";
+  font-weight: bold;
+}
+p:after{
+  content: " - after content";
+  font-weight: bold;
+}</pre>
+
+<pre contenteditable>&lt;p>the content&lt;/p></pre>
+
+<p class="beforeafter">the content</p>
+<pre contenteditable>&lt;p>
+    &lt;before&gt;before content - &lt;/before>
+        the content
+    &lt;after&gt; - after content&lt;/after>
+&lt;/p></pre>
+<a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
+</div>
+
+<!-- UI selectors -->
+<div class="slide object">
+<object data="files/generatedcontent.html"></object>
+     <header><h1>Generated Content</h1></header>
+ <a href="files/generatedcontent.html" target="play">Generated Content</a></h1>
+  <p>Test them out for yourselves</p>
+    </div>
 <!-- Drop Cap
 <div class="slide object ">
      <header><h1>::first-letter</h1></header>
@@ -597,6 +636,7 @@ already exist.<br>
 
      </section>
     </div>
+
 
     <!-- ::selection -->
 <div class="slide normal thisSlide foo">
