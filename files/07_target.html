@@ -11,47 +11,50 @@ style:last-of-type {padding: 5px 20px; font-size: 1.25em; white-space: pre; font
 
 
 
-.block { 
-	width: 300px; 
- 	min-height: 250px; 
+.block {
+	width: 300px;
+ 	min-height: 250px;
 	position: relative;
 	margin: 20px auto;
 	}
         section { display: inline; }
-         a { 
-			text-decoration: none; 
-			color: black; 
-			float: left; 
-			padding: 5px 10px; 
-			border: 1px solid #ccc; 
-			border-bottom: none; 
+         a {
+			text-decoration: none;
+			color: black;
+			float: left;
+			padding: 5px 10px;
+			border: 1px solid #ccc;
+      border-bottom-color: #fff;
 			margin-right: 10px;
+      position: relative;
+      top: 2px
 			}
-        div:not(:target) > a { 
-			background-color: #eee;
-			}   
-        div:target > a { 
-			background-color: white; 
-			}    
-        section > div { 
-			background: white; 
-			z-index: -2; 
-			left: 0; 
-			top: 30px; 
-			bottom: 0; 
-			right: 0; 
-			padding: 20px; 
-			border: 1px solid #ccc; }    
+        div:not(:target) > a {
+			background-color: #ccc;
+			}
+        div:target > a {
+			background-color: white;
+      z-index: 2;
+			}
+        section > div {
+			background: white;
+			z-index: -2;
+			left: 0;
+			top: 30px;
+			bottom: 0;
+			right: 0;
+			padding: 20px;
+			border: 1px solid #ccc; }
         section:not(:target) > div { position: absolute }
         section:target > div { position: absolute; z-index: -1; }
 </style>
 
-<style contenteditable>section:not(:target) > a { 
-	border-bottom: 0; 
-	background-color: #eee;
-}   
-section:target > a { 
-	background-color: white; 
+<style contenteditable>section:not(:target) > a {
+  background-color: #ccc;
+}
+section:target > a {
+  background-color: white;
+  border-bottom-color: #fff;
 }
 section:not(:target) > div { z-index: -2; }
 section:target > div { z-index: -1; }
