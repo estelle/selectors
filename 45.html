@@ -143,12 +143,30 @@ function hasaclass(selector){
   for (; j < update.length; j++){
     update[j].classList.add('active');
   }
-  console.log(elements.length + ' ' + update.length);
 }
 </script>
     </div>
 
+<div class="slide">
+  <header><h1>In case you were wondering...</h1></header>
+    <section class="content">
+      <pre contenteditable>
+function hasaclass(selector){
+  var i = j = 0,
+  elements = document.<strong>querySelectorAll</strong>('.current .ex li'),
+  update = document.<strong>querySelectorAll</strong>('.current .ex ' + selector);
 
+  for (; i &lt; elements.length; i++){
+    elements[i].<strong>classList.remove</strong>('active');
+  }
+
+  for (; j &lt; update.length; j++){
+    update[j].<strong>classList.add</strong>('active');
+  }
+
+}      </pre>
+    </section>
+</div>
 <!--
 <div class="slide object">
 <header><h1>Play Time</h1>
@@ -259,7 +277,7 @@ function hasaclass(selector){
   <dd>Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value <em>val</em>.</dd>
   <dt>E[attr|=val]</dt>
   <dd>Element E whose attribute <em>attr</em> has a value <em>val</em> or begins with val- (&quot;val&quot; plus &quot;-&quot;).<br />
-    <pre contenteditable>p[lang|=&quot;en&quot;]{/*    &lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
+    <pre contenteditable>p[lang|=&quot;en&quot;]{/*&lt;p lang=&quot;en-us&quot;&gt;  &lt;p lang=&quot;en-uk&quot;&gt; */ }</pre>
   </dd>
   <dt>E[attr~=val]</dt>
   <dd>Element E whose attribute <em>attr</em> has within its value the space-separated full word <em>val</em>.<br />
@@ -275,13 +293,13 @@ function hasaclass(selector){
      <dl>
   <dt>E[attr^=val]</dt>
   <dd>Element E whose attribute <em>attr</em> starts with the value <em>val</em>.<br />
-    <pre contenteditable>a[href^=mailto] {background-image: url(emailicon.gif);}
+    <pre contenteditable>a[href^="mailto:"] {background-image: url(emailicon.gif);}
 a[href^=http]:after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
   </dd>
   <dt>E[attr$=val]</dt>
   <dd>Element E whose attribute <em>attr</em> ends in <em>val</em> . <br />
-    <pre contenteditable>a[href$=pdf] {background-image: url(pdficon.gif);}
-a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
+    <pre contenteditable>a[href$=".pdf"] {background-image: url(pdficon.gif);}
+a[href$=".pdf"]:after {content: &quot; (PDF)&quot;;}</pre>
   </dd>
   <dt>E[attr*=val]</dt>
   <dd>Element E whose attribute <em>attr </em>matches <em>val</em> anywhere within the attribute. Similar to E[attr~=val] above, except the <em>val</em> can be part of a word.</dd>
