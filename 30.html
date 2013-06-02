@@ -134,7 +134,7 @@ var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
     </div>
 
 <div class="slide object">
-<header><h1>Play Time</h1>
+<header><h1>Play Time</h1></header>
 <object data="files/00_basic.html"></object>
 <a href="files/00_basic.html" target="play" class="objectlink">Try it out</a>
 </div>
@@ -345,45 +345,44 @@ E[att<b>*=</b>val] {/* val is anywhere as a substring */}</pre>
      <header><h1>Structural Selectors</h1></header>
      <section class="content">
      <pre contenteditable style="margin-top: 0; float: left;">
-tr:<b>first-child</b>,
-tr:<b>last-child</b> {
+li:<b>first-child</b>,
+li:<b>last-child</b> {
   font-weight: bold;
 }
-tr:<b>first-of-type</b>,
-tr:<b>last-of-type</b>{
+li:<b>first-of-type</b>,
+li:<b>last-of-type</b>{
   text-decoration:line-through;
 }
-tr:<b>nth-child</b>(<b>even</b>) {
+li:<b>nth-child</b>(<b>even</b>) {
   background-color: #CCC;
 }
-tr:nth-child(<b>3</b>) {
+li:nth-child(<b>3</b>) {
   color: #CCC;
 }
-tr:<b>nth-of-type</b>(<b>odd</b>) {
+li:<b>nth-of-type</b>(<b>odd</b>) {
   background-color: #FFF;
 }
-tr:nth-of-type(<b>4n</b>) {
+li:nth-of-type(<b>4n</b>) {
   color: #C61800;
 }
-tr:nth-of-type(<b>3n-1</b>) {
+li:nth-of-type(<b>3n-1</b>) {
   text-align: right;
 }
 
 </pre>
-<table class="structural" cellpadding="1" cellspacing="0" border="0" style="float: right; width:33%;">
-<tbody>
-<tr><td>Row 1</td></tr>
-<tr><td>Row 2</td></tr>
-<tr><td>Row 3</td></tr>
-<tr><td>Row 4</td></tr>
-<tr><td>Row 5</td></tr>
-<tr><td>Row 6</td></tr>
-<tr><td>Row 7</td></tr>
-<tr><td>Row 8</td></tr>
-<tr><td>Row 9</td></tr>
-<tr><td>Row 10</td></tr>
-</tbody>
-</table>
+<ul class="structural" style="float: right; width:33%;">
+
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+<li>item 4</li>
+<li>item 5</li>
+<li>item 6</li>
+<li>item 7</li>
+<li>item 8</li>
+<li>item 9</li>
+<li>item 10</li>
+</ul>
      </section>
  </div>
 

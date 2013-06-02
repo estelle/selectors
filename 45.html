@@ -6,7 +6,7 @@
 
 <meta charset="utf-8" />
     <title>Selectors: Select This!</title>
-<link rel="stylesheet" href="selectors.css"/>
+<link rel="stylesheet" href="white.css"/>
 <style>
 .current * { -webkit-tap-highlight-color: #bada55;}
 .thisSlide.foo {
@@ -308,39 +308,24 @@ a[href$=".pdf"]:after {content: &quot; (PDF)&quot;;}</pre>
  </div>
 
 <!-- Attribute Selectors Recap -->
+<!-- Attribute Selectors Recap -->
 <div class="slide normal">
-     <header><h1>Attribute Selectors Recap</h1></header>
+     <header><h1>Attribute Selectors</h1></header>
      <section class="content">
-     <pre contenteditable style="float:left; width: 45%; margin: 0 20px 0 0;">
-input[placeholder] {
-<b class="notes">/* input with placeholder */</b>}
-input[type=email] {
-<b class="notes">/* exact match */</b>}
-abbr[title~=foo] {
-<b class="notes">/* foo but not foobar */</b>}
-abbr[title|=en] {
-<b class="notes">/* en, en-us &amp; en-uk */</b>}
-a[href^=mailto] {
-<b class="notes">/* starts with */</b>}
-a[href$=pdf]{
-<b class="notes">/* ends in */</b>}
-abbr[title*=foo] {
-<b class="notes">/* matches foo and foobar */</b>}
-</pre>
-<pre contenteditable style="float:left; width: 40%; margin-top:0;">E:[att]
-<b class="notes">/* has attribute */</b>
-E:[att=val]
-<b class="notes">/* exact */</b>
-E:[att~=val]
-<b class="notes">/* space separated word*/</b>
-E:[att|=val]
-<b class="notes">/* with a dash */</b>
-E:[att^=val]
-<b class="notes">/* begins with val */</b>
-E:[att$=val]
-<b class="notes">/* ends with val */</b>
-E:[att*=val]
-<b class="notes">/* substring */</b></pre>
+
+<pre contenteditable>E<b>[att]</b>      {/* has the attribute at all */}
+
+E[att<b>=</b>val]  {/* exact */}
+
+E[att<b>~=</b>val] {/* val is a space separated word */}
+
+E[att<b>|=</b>val] {/* with a dash */}
+
+E[att<b>^=</b>val] {/* begins with val */}
+
+E[att<b>$=</b>val] {/* ends with val */}
+
+E[att<b>*=</b>val] {/* val is anywhere as a substring */}</pre>
 <pre contenteditable style="clear:both">
 @media print{
   abbr[title]:after {
@@ -350,8 +335,12 @@ E:[att*=val]
     content: "(" attr(href) ")";
   }
 }</pre>
+
+<p>Note: Multiple attributes work! a[title][href]</p>
      </section>
  </div>
+
+
 
 
 <!-- List of Structural selectors -->
@@ -451,45 +440,44 @@ E:[att*=val]
      <header><h1>Structural Selectors</h1></header>
      <section class="content">
      <pre contenteditable style="margin-top: 0; float: left;">
-tr:<b>first-child</b>,
-tr:<b>last-child</b> {
+li:<b>first-child</b>,
+li:<b>last-child</b> {
   font-weight: bold;
 }
-tr:<b>first-of-type</b>,
-tr:<b>last-of-type</b>{
+li:<b>first-of-type</b>,
+li:<b>last-of-type</b>{
   text-decoration:line-through;
 }
-tr:<b>nth-child</b>(<b>even</b>) {
+li:<b>nth-child</b>(<b>even</b>) {
   background-color: #CCC;
 }
-tr:nth-child(<b>3</b>) {
+li:nth-child(<b>3</b>) {
   color: #CCC;
 }
-tr:<b>nth-of-type</b>(<b>odd</b>) {
+li:<b>nth-of-type</b>(<b>odd</b>) {
   background-color: #FFF;
 }
-tr:nth-of-type(<b>4n</b>) {
+li:nth-of-type(<b>4n</b>) {
   color: #C61800;
 }
-tr:nth-of-type(<b>3n-1</b>) {
+li:nth-of-type(<b>3n-1</b>) {
   text-align: right;
 }
 
 </pre>
-<table class="structural" cellpadding="1" cellspacing="0" border="0" style="float: right; width:33%;">
-<tbody>
-<tr><td>Row 1</td></tr>
-<tr><td>Row 2</td></tr>
-<tr><td>Row 3</td></tr>
-<tr><td>Row 4</td></tr>
-<tr><td>Row 5</td></tr>
-<tr><td>Row 6</td></tr>
-<tr><td>Row 7</td></tr>
-<tr><td>Row 8</td></tr>
-<tr><td>Row 9</td></tr>
-<tr><td>Row 10</td></tr>
-</tbody>
-</table>
+<ul class="structural" style="float: right; width:33%;">
+
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+<li>item 4</li>
+<li>item 5</li>
+<li>item 6</li>
+<li>item 7</li>
+<li>item 8</li>
+<li>item 9</li>
+<li>item 10</li>
+</ul>
      </section>
  </div>
 
@@ -515,22 +503,19 @@ tr:nth-of-type(<b>3n-1</b>) {
  </div>
 
 
- <div class="slide object">
+ <div class="slide normal object">
  <object data="files/05_nth.html"></object>
-     <header><h1>Structural Selectors</h1></header>
  <a href="files/05_nth.html" target="play" class="objectlink">Structural Selectors</a>
  </div>
 
- <div class="slide object">
+ <div class="slide normal object">
  <object data="files/05_flag.html#flag"></object>
-     <header><h1>Flag with Structural Selectors</h1></header>
  <a href="files/05_flag.html" target="play" class="objectlink">USA Flag</a>
  </div>
 
 
- <div class="slide object">
+ <div class="slide normal object">
  <object data="files/05_flag.html#flag"></object>
-     <header><h1>Simpler Flag with Structural Selectors</h1></header>
  <a href="files/05_flag2.html" target="play" class="objectlink">USA Flag</a>
  </div>
 
