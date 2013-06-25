@@ -5,9 +5,23 @@
     <!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" /><![endif]-->
 <meta charset="utf-8" />
     <title>Selectors: Select This!</title>
-<link rel="stylesheet" href="selectors.css"/>
+<link rel="stylesheet" href="white.css"/>
 <style>
-
+.current * { -webkit-tap-highlight-color: #bada55;}
+.thisSlide.foo {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.beforeafter:before {
+  content: "before - ";
+  font-weight: bold;
+}
+.beforeafter:after {
+  content: " - after";
+  font-weight: bold;
+  }
+.active {color: red; font-weight: bold; background-color: rgba(0,0,0,0.3)}
 
 </style>
 </head>
@@ -81,44 +95,79 @@ var chil = el.<strong>querySelectorAll</strong>('.foo');</pre>
 </div>
 
 
+
 <!-- Relational selectors -->
 <div class="slide normal" id="slcRelational">
      <header><h1>Relational selectors</h1></header>
      <section class="content">
      <div class="ex right">
-     	<ol>
-     	<li>item 1</li>
-     	<li>item 2</li>
-     	<li>item 3
-        	<ul>
-     		<li>item a</li>
-     		<li>item b</li>
-     		<li>item c</li>
+      <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3
+          <ul>
+        <li>item a</li>
+        <li>item b</li>
+        <li>item c</li>
             </ul>
         </li>
-     	<li>item 4</li>
-     	<li>item 5</li>
-     	<li>item 6</li>
-     	<li>item 7</li>
+      <li class="hasaclass">hasaclass</li>
+      <li>item 5</li>
+      <li>item 6</li>
+      <li>item 7</li>
         </ol>
         </div>
 <dl>
-  <dt>ul li</dt>
+  <dt><span onclick="hasaclass('ul li');">ul li</span>, <br><span onclick="hasaclass('ol li');">ol li</span></dt>
   <dd>descendant selector<br />
     matches nested &lt;li&gt;s</dd>
-  <dt>ol &gt; li</dt>
+  <dt onclick="hasaclass('ol > li');">ol &gt; li</dt>
   <dd><em>child selector</em> <br />
     matches &lt;li&gt;s in &lt;ol&gt; but not nested &lt;ul&gt;</dd>
-  <dt>li.myClass + li</dt>
+  <dt onclick="hasaclass('li.hasaclass + li');">li.hasaclass + li</dt>
   <dd><em>adjacent sibling</em> </dd>
-  <dt><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 8px; position:relative; left: 20px; margin-left: -20px;">(IE7+)</span><br />
-    li.myClass ~ li</dt>
+  <dt onclick="hasaclass('li.hasaclass ~ li');"><strong class="new">NEW  </strong><span style="background-color:#eee; padding:3px 20px; position:relative; left: 22px; margin-left: -20px;">(IE7+)</span><br />
+    li.hasaclass ~ li</dt>
   <dd>
-    <em>general sibling	selector</em><br />
+    <em>general sibling selector</em><br />
     matches later siblings, but not nested.</dd>
 </dl>
      </section>
+<script defer>
+function hasaclass(selector){
+  var i = j = 0,
+  elements = document.querySelectorAll('.current .ex li'),
+  update = document.querySelectorAll('.current .ex ' + selector);
+  for (; i < elements.length; i++){
+    elements[i].classList.remove('active');
+  }
+  for (; j < update.length; j++){
+    update[j].classList.add('active');
+  }
+}
+</script>
     </div>
+
+<div class="slide">
+  <header><h1>In case you were wondering...</h1></header>
+    <section class="content">
+      <pre contenteditable>
+function hasaclass(selector){
+  var i = j = 0,
+  elements = document.<strong>querySelectorAll</strong>('.current .ex li'),
+  update = document.<strong>querySelectorAll</strong>('.current .ex ' + selector);
+
+  for (; i &lt; elements.length; i++){
+    elements[i].<strong>classList.remove</strong>('active');
+  }
+
+  for (; j &lt; update.length; j++){
+    update[j].<strong>classList.add</strong>('active');
+  }
+
+}      </pre>
+    </section>
+</div>
 
 <div class="slide object">
 <header><h1>Play Time</h1></header>
@@ -637,6 +686,31 @@ li:nth-of-type(<b>3n-1</b>) {
      </section>
     </div>
 
+ <div class="object slide">
+  <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf"></object>
+     <header><h1>Specificity (SpeciFISHity)</h1></header>
+  <a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="play" class="objectlink"> </a>
+</div>
+
+
+<!-- Specificity Notes -->
+<div class="slide normal">
+     <header><h1>Specificity: The less than obvious</h1></header>
+     <section class="content">
+ <p>The * selector, or global selector, has no value.</p>
+ <pre contenteditable>* {} 0-0-0 </pre>
+
+<p>Combinators, like ~, >, and + have no value</p>
+<pre contenteditable>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+<p>:not has no value, but parameter selector does</p>
+<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
+
+<p>Specificity is not inheritance</p>
+     </section>
+</div>
+
 
 <!-- Pseudo elements -->
 <div class="slide intro">
@@ -704,16 +778,88 @@ already exist.<br>
      </section>
     </div>
 
-
-<!-- selectors tips -->
-<div class="slide normal">
-     <header><h1>Tips</h1></header>
+    <!-- ::selection -->
+<div class="slide normal thisSlide foo">
+     <header><h1>Disabling ::selection</h1></header>
      <section class="content">
-<ul>
-	<li><a href="http://selectivizr.com/" target="_blank">selectivizr.com</a> + JS Library = JS for backward compatibility</li>
-    <li>jQuery $(selector) == document.querySelectorAll(selector)</li>
-    <li>Many, many more pseudo-elements with prefixes currently treated as a shadow DOM
-    	<ul><li>::-webkit-progress-bar</li>
+
+    <pre contenteditable>.thisSlide *::selection {
+   background-color: #990000;
+   color: #ffffff;
+}</pre>
+<p>For mobile but impacts desktop too:</p>
+<pre class="contenteditable">.thisSlide {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}</pre>
+
+     </section>
+    </div>
+
+
+
+<!-- :before and :after  -->
+<div class="slide normal">
+     <header><h1>::before and ::after</h1></header>
+
+
+     <section class="content">
+  <pre contenteditable>p:before {
+  content: "before content - ";
+  font-weight: bold;
+}
+p:after{
+  content: " - after content";
+  font-weight: bold;
+}</pre>
+
+<pre contenteditable>&lt;p>the content&lt;/p></pre>
+
+<p class="beforeafter">the content</p>
+<pre contenteditable>&lt;p>
+    &lt;before&gt;before content - &lt;/before>
+        the content
+    &lt;after&gt; - after content&lt;/after>
+&lt;/p></pre>
+<a href="files/31_generatetext.html" target="play" class="objectlink">Try it out</a> </section>
+</div>
+
+<!-- UI selectors -->
+<div class="slide object">
+<object data="files/generatedcontent.html"></object>
+     <header><h1>Generated Content</h1></header>
+ <a href="files/generatedcontent.html" target="play">Generated Content</a></h1>
+  <p>Test them out for yourselves</p>
+    </div>
+
+
+
+<div class="slide">
+  <header><h1>IE10 Specific</h1></header>
+    <section class="content">
+<pre contenteditable style="font-size: 1.9rem">::-ms-browse
+::-ms-value
+::-ms-check
+::-ms-clear
+::-ms-expand
+::-ms-fill
+::-ms-fill-lower
+::-ms-fill-upper
+::-ms-reveal
+::-ms-thumb
+::-ms-ticks-after
+::-ms-ticks-before
+::-ms-tooltip
+::-ms-track</pre>
+    </section>
+</div>
+
+<div class="slide">
+  <header><h1>Shadow DOM</h1></header>
+    <section class="content">
+          <p>Many, many more pseudo-elements with prefixes currently treated as a shadow DOM
+      <ul><li>::-webkit-progress-bar</li>
          <li>::-webkit-progress-value</li>
          <li>::-webkit-meter-even-less-good-value
          </li>
@@ -725,6 +871,18 @@ already exist.<br>
          <li><a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions#section_22" target="_new">Mozilla Pseudo-elements and pseudo-classes</a></li>
 
          </ul>
+    </section>
+</div>
+
+
+<!-- selectors tips -->
+<div class="slide normal">
+     <header><h1>Tips</h1></header>
+     <section class="content">
+<ul>
+	<li><a href="http://selectivizr.com/" target="_blank">selectivizr.com</a> + JS Library = JS for backward compatibility</li>
+    <li>jQuery $(selector) == document.querySelectorAll(selector)</li>
+
     </li>
 
 </ul>
