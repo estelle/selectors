@@ -285,6 +285,10 @@ SlideShow.prototype = {
     current: 0,
 
     next: function() {
+    if(document.querySelectorAll('.current .temphidden').length) {
+      document.querySelector('.current .temphidden').classList.remove('temphidden');
+      return;
+    }
 		if (!this._slides[this.current-1].buildNext()) {
 		  this.current = Math.min(this.current + 1, this._slides.length);
 		  this._update();
