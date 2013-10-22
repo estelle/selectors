@@ -273,10 +273,10 @@ pre {
 pre.example {background-color: #51330f; color: #fff;}
 pre b {
 	font-weight: normal;
-	color: #f2aa03;
+	color: #eb8100;
 	text-shadow: currentColor 0 0 1px;
 /*letter-spacing: -1px;*/}
-pre.example b {color: #f2aa03;}
+pre.example b {color: #eb8100;}
 pre em {
 	font-weight: normal;
 	font-style: normal;
@@ -370,7 +370,7 @@ margin: 0 0 2px 0;
 }
 pre b, .pre b, .imp, a {
 font-weight: normal;
-color: #f2aa03;
+color: #eb8100;
 }
 pre, .ex, .pre, .codelike {
 text-align: left;
@@ -469,7 +469,7 @@ columns: 3 1em;
   background-color: #FFF;
 }
 .structural :nth-of-type(4n) {
-  color: #f2aa03;
+  color: #eb8100;
 }
 .structural :nth-of-type(3n-1) {
   text-align: right;
@@ -490,7 +490,7 @@ p.firstletter {width: 400px;
 	float: left;
 	font-size: 3em;
 	line-height: 1;
-	color: #f2aa03;
+	color: #eb8100;
 	padding: 0 4px 2px 0;
 	font-weight: bold;
 }
@@ -553,7 +553,7 @@ a {border-bottom: 1px dotted black;}
     -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
 
 -webkit-background-clip: text,text,text,text,text,text,text,text, border;
-color: rgba(0,0,0,0);*/ color: #f2aa03;
+color: rgba(0,0,0,0);*/ color: #eb8100;
     }
 h1 {font-family: 'Rum Raisin', sans-serif;}
 .invert h1{
