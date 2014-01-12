@@ -9,7 +9,7 @@ body {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	color: #51330f;
+	color: #171E45;
 	left: 0px; top: 0px;
 }
 h1 {letter-spacing: 1px;font-family: 'Bigelow Rules', cursive, 'Rum Raisin', "Trebuchet MS", Arial, Helvetica, sans-serif;}
@@ -68,7 +68,7 @@ text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 	top: 0px;
 	display: block;
 	overflow: hidden;
-	background-image: url(bat.png);
+	background-image: url(img/swan.png);
 	background-repeat: no-repeat;
 	-webkit-animation: bat 600s alternate infinite;
 }
@@ -270,13 +270,13 @@ pre {
 	border-radius: 8px;
 	border: 1px solid #ccc;
 }
-pre.example {background-color: #51330f; color: #fff;}
+pre.example {background-color: #171E45; color: #fff;}
 pre b {
 	font-weight: normal;
-	color: #eb8100;
+	color: #54b1f3;
 	text-shadow: currentColor 0 0 1px;
 /*letter-spacing: -1px;*/}
-pre.example b {color: #eb8100;}
+pre.example b {color: #54b1f3;}
 pre em {
 	font-weight: normal;
 	font-style: normal;
@@ -370,7 +370,7 @@ margin: 0 0 2px 0;
 }
 pre b, .pre b, .imp, a {
 font-weight: normal;
-color: #eb8100;
+color: #54b1f3;
 }
 pre, .ex, .pre, .codelike {
 text-align: left;
@@ -469,7 +469,7 @@ columns: 3 1em;
   background-color: #FFF;
 }
 .structural :nth-of-type(4n) {
-  color: #eb8100;
+  color: #54b1f3;
 }
 .structural :nth-of-type(3n-1) {
   text-align: right;
@@ -490,7 +490,7 @@ p.firstletter {width: 400px;
 	float: left;
 	font-size: 3em;
 	line-height: 1;
-	color: #eb8100;
+	color: #54b1f3;
 	padding: 0 4px 2px 0;
 	font-weight: bold;
 }
@@ -553,7 +553,7 @@ a {border-bottom: 1px dotted black;}
     -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
 
 -webkit-background-clip: text,text,text,text,text,text,text,text, border;
-color: rgba(0,0,0,0);*/ color: #eb8100;
+color: rgba(0,0,0,0);*/ color: #54b1f3;
     }
 h1 {font-family: 'Rum Raisin', sans-serif;}
 .invert h1{
@@ -586,9 +586,8 @@ color: rgba(0,0,0,0);*/
 	.slide.current {-webkit-transform: scale(0.75);}
 }
 @-webkit-keyframes bat {
-	0% {background-position: 5% 5%;}
-	50% {background-position: -5% 90%}
-	100% {background-position: 95% 95%;}
-
+	0% {background-position: 0% 100%;}
+	50% {background-position: 100% 100%}
+	100% {background-position: 0% 100%;}
 }
 
