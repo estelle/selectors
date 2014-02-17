@@ -280,8 +280,8 @@ pre.example b {color: hsl(205, 87%, 50%);}
 pre em {
 	font-weight: normal;
 	font-style: normal;
-	color: #18a600;
-	text-shadow: #18a600 0 0 1px;
+	color: hsl(205, 87%, 70%);
+	text-shadow: hsl(205, 87%, 70%) 0 0 1px;
 }
 p {margin: 0.75em 0 0 0;}
 div.example {
@@ -371,6 +371,10 @@ margin: 0 0 2px 0;
 pre b, .pre b, .imp, a {
 font-weight: normal;
 color: hsl(205, 87%, 50%);
+}
+pre.example b {
+
+color: hsl(205, 87%, 70%);
 }
 pre, .ex, .pre, .codelike {
 text-align: left;
