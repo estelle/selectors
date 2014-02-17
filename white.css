@@ -70,7 +70,7 @@ text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 	overflow: hidden;
 	background-image: url(img/swan.png);
 	background-repeat: no-repeat;
-	-webkit-animation: bat 600s alternate infinite;
+	-webkit-animation: bat 600s infinite;
 }
 .slides {
 	padding-top: 10px;
@@ -273,10 +273,10 @@ pre {
 pre.example {background-color: #171E45; color: #fff;}
 pre b {
 	font-weight: normal;
-	color: #54b1f3;
+	color: hsl(205, 87%, 50%);
 	text-shadow: currentColor 0 0 1px;
 /*letter-spacing: -1px;*/}
-pre.example b {color: #54b1f3;}
+pre.example b {color: hsl(205, 87%, 50%);}
 pre em {
 	font-weight: normal;
 	font-style: normal;
@@ -370,7 +370,7 @@ margin: 0 0 2px 0;
 }
 pre b, .pre b, .imp, a {
 font-weight: normal;
-color: #54b1f3;
+color: hsl(205, 87%, 50%);
 }
 pre, .ex, .pre, .codelike {
 text-align: left;
@@ -469,7 +469,7 @@ columns: 3 1em;
   background-color: #FFF;
 }
 .structural :nth-of-type(4n) {
-  color: #54b1f3;
+  color: hsl(205, 87%, 50%);
 }
 .structural :nth-of-type(3n-1) {
   text-align: right;
@@ -490,7 +490,7 @@ p.firstletter {width: 400px;
 	float: left;
 	font-size: 3em;
 	line-height: 1;
-	color: #54b1f3;
+	color: hsl(205, 87%, 50%);
 	padding: 0 4px 2px 0;
 	font-weight: bold;
 }
@@ -540,38 +540,10 @@ a {border-bottom: 1px dotted black;}
 
 @media screen and (-webkit-min-device-pixel-ratio:0){
 .textmask, h1, a{
-/*
-    background:
-        -webkit-linear-gradient(left, rgba(0,0,0,0.2) 50%, transparent 50%),
-        -webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
-        -webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
-        -webkit-linear-gradient(left, transparent 50%, rgba(0,0,0,0.2) 50%),
-        -webkit-linear-gradient(left, transparent 40%, rgba(0,0,0,0.2) 40%),
-        -webkit-linear-gradient(left, transparent 60%, rgba(0,0,0,0.2) 60%),
-        -webkit-linear-gradient(left,
-        red 14%, orange 15%, orange 28%, yellow 29%, yellow 42%, green 43%, green 56%, blue 57%, blue 70%, magenta 71%, magenta 85%, purple 86%), white;
-    -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
-
--webkit-background-clip: text,text,text,text,text,text,text,text, border;
-color: rgba(0,0,0,0);*/ color: #54b1f3;
+ color: hsl(205, 87%, 50%);
     }
 h1 {font-family: 'Rum Raisin', sans-serif;}
-.invert h1{
-/*
-    background:
-        -webkit-linear-gradient(left, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 50%),
-        -webkit-linear-gradient(left, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 40%),
-        -webkit-linear-gradient(left, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2) 60%),
-        -webkit-linear-gradient(left, rgba(255,255,255,0) 50%, rgba(255,255,255,0.2) 50%),
-        -webkit-linear-gradient(left, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 40%),
-        -webkit-linear-gradient(left, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2) 60%),
-        -webkit-linear-gradient(left,
-        red 14%, orange 15%, orange 28%, yellow 29%, yellow 42%, green 43%, green 56%, blue 57%, blue 70%, magenta 71%, magenta 85%, purple 86%), white;
-    -webkit-background-size: 1px 50%, 1px 50px, 32px, 120px, 80px, 70px, 500px;
 
--webkit-background-clip: text,text,text,text,text,text,text,text, border;
-color: rgba(0,0,0,0);*/
-    }
 
 .normal h1.textmask {
 	font-size: 200%;
@@ -586,8 +558,7 @@ color: rgba(0,0,0,0);*/
 	.slide.current {-webkit-transform: scale(0.75);}
 }
 @-webkit-keyframes bat {
-	0% {background-position: 0% 100%;}
-	50% {background-position: 100% 100%}
-	100% {background-position: 0% 100%;}
+	0% {background-position: -10% 100%;}
+	100% {background-position: 105% 100%;}
 }
 
