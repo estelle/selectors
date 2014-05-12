@@ -24,7 +24,7 @@
   font-weight: bold;
   }
 .active {color: red; font-weight: bold; background-color: rgba(0,0,0,0.3)}
-
+#presentation {-webkit-animation: none; background-image: none;}
 </style>
 </head>
 
@@ -492,7 +492,7 @@ E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
 <div class="slide normal">
      <header><h1>Form related UI pseudo-classes</h1></header>
      <section class="content">
-  <pre contenteditable class="columns3" style="margin-bottom: -10px; padding-bottom: 0;">:valid
+  <pre contenteditable style="font-size: 1.8rem; line-height: 1.4;">:valid
 :invalid
 :required
 :optional
@@ -501,16 +501,29 @@ E:[att*=val]  <b class="notes"><br/>/* val is anywhere as a substring */</b>
 :read-only
 :read-write
 :default</pre>
+  </section>
+</div>
+
+
+
+
+<!--Form related UI pseudo-classes -->
+<div class="slide normal">
+     <header><h1>Form related UI pseudo-classes</h1></header>
+     <section class="content">
 <pre  contenteditable class="example">input:valid { border: 1px solid green;}
 input:invalid { border: 1px solid red;}
-input:required {border-width: 5px;}
+input:required,
+input[aria-required="true"] {border-width: 5px;}
 input:optional {border-width: 10px;}
 input:out-of-range { background-color: pink;}
 input:in-range { background-color:lightgreen;}</pre>
 <div style="clear:both;">
 <input type="number" min="5" max="7" id="test3ck" required/> <label  for="test3ck">Number between 5 and 7</label><br>
 <input type="number" min="0" step="0.1" max="10" id="test4ck"/><label for="test4ck">Number between 0 and 10</label>
-<pre contenteditable class="example">&lt;input type="number" min="5" max="7" required/&gt;
+<pre contenteditable class="example">&lt;input type="number" min="5" max="7"
+  required aria-required="true"/&gt;
+
 &lt;input type="number" min="0" step="0.1" max="10"/>
 </pre>
 </div>   </section>

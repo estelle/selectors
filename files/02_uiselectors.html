@@ -17,7 +17,8 @@ input {font-size: 2rem;}
 input[type=checkbox]:checked + label {color: red;}
 input:valid { border: 1px solid green;}
 input:invalid { border: 1px solid red;}
-input:required {border-width: 5px;}
+input:required,
+input[aria-required=true] {border-width: 5px;}
 input:optional {border-width: 10px;}
 input:out-of-range { background-color: pink;}
 input:in-range { background-color:lightgreen;}
