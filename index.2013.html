@@ -122,14 +122,12 @@ selector ~ relation {
   </section>
  </div>
 
-
-<!-- tag, id and class selector play --
 <div class="slide object">
   <header><h1>Play Time</h1></header>
   <object data="files/00_basics.html"></object>
   <a href="files/00_basics.html" target="play" class="objectlink">Try it out</a>
 </div>
--->
+
 
 <div class="slide normal">
   <header><h1>Selectors API</h1></header>
@@ -303,6 +301,7 @@ function hasaclass(slctr){
       <li>:enabled</li>
       <li>:disabled</li>
       <li>:checked</li>
+      <li>:indeterminate</li>
       <li>:default</li>
       <li>:valid</li>
       <li>:invalid</li>
@@ -315,78 +314,6 @@ function hasaclass(slctr){
     </ul>
   </section>
 </div>
-
-
-<div class="slide normal">
-  <header>
-    <h1>Mo' Selectors</h1>
-  </header>
-  <section class="content">
-    <ul class="columns">
-      <li>:indeterminate</li>
-      <li>E:not(s1, s2)</li>
-      <li>E:matches(s1, s2)</li>
-      <li>E:has(rs1, rs2)</li>
-      <li>E[foo="bar" i]</li>
-      <li>E:dir(ltr)</li>
-      <li>E:lang(zh, *-hant)</li>
-      <li>:any-link</li>
-      <li>:scope</li>
-      <li>:current</li>
-      <li>:current(s)</li>
-      <li>:past</li>
-      <li>:future</li>
-      <li>:active-drop</li>
-      <li>:valid-drop</li>
-      <li>:invalid-drop</li>
-      <li>:placeholder-shown</li>
-      <li>:blank</li>
-      <li>F || E</li>
-      <li>:nth-column(n)</li>
-      <li>:nth-last-column(n)</li>
-      <li>:scope</li>
-      <li>:scope-context()</li>
-      <li>:host</li>
-      <li>:host()</li>
-      <li>:host-context()</li>
-      <li>::shadow</li>
-      <li>::content</li>
-      <li>E /deep/ F</li>
-      <li>::region</li>
-    </ul>
-  </section>
-</div>
-
-
-
- <div class="object slide">
-  <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" style="height: 792px;"></object>
-     <header><h1>Specificity (SpeciFISHity)</h1></header>
-  <a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="play" class="objectlink"> </a>
-</div>
-
-
-<!-- Specificity Notes -->
-<div class="slide normal">
-     <header><h1>Specificity: How it works</h1></header>
-     <section class="content">
-      <ul>
-        <li><code contenteditable>1-0-0</code>: ID selector</li>
-        <li><code contenteditable>0-1-0</code>: Class selector (Also attribute selector &amp; pseudoclass)</li>
-        <li><code contenteditable>0-0-1</code>: Element Selector</li>
-
- <p>The * selector, or global selector, has no value.</p>
- <pre contenteditable>* {} 0-0-0 </pre>
-
-<p>Combinators, like ~, >, and + have no value</p>
-<pre contenteditable>ul li {} 0-0-2
-ul > li {} 0-0-2</pre>
-
-     </section>
-</div>
-
-
-
 
 <!-- Standardista: selector support grid -->
 <div class="slide object">
@@ -609,15 +536,6 @@ input:in-range { background-color:lightgreen;}</pre>
  <a href="files/02_uiselectors.html" target="play">UI Selectors</a></h1>
   <p>Test them out for yourselves</p>
   <a class="objectlink" href="files/02_uiselectors.html">Open in new page</a>
-    </div>
-
-<!-- UI selectors -->
-<div class="slide object">
-<object data="files/02_counting.html"></object>
-     <header><h1>UI selectors</h1></header>
- <a href="files/02_uiselectors.html" target="play">UI Selectors</a></h1>
-  <p>Test them out for yourselves</p>
-  <a class="objectlink" href="files/02_counting.html">Open in new page</a>
     </div>
 
 
