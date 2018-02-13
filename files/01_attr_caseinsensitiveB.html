@@ -1,0 +1,23 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="editme.css"><style>
+
+p {font-size: 3vw; font-family: georgia;}
+</style>
+
+<style contenteditable class="editme">p[class="text"] { color: red; }
+p[class="TEXT"] { color: blue; }
+p[class="TeXt" i] { color: green; }
+</style>
+<title>Attribute selector and case sensitivity</title>
+</head>
+<p class="TEXT"> class="TEXT"</p>
+<p class="text"> class="text"</p>
+<p class="TeXt"> class="TeXt"</p>
+
+<body>
+</body>
+</html>
+
