@@ -7,29 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Bigelow+Rules' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="white.css"/>
 <style>
-.current * { 
-  -webkit-tap-highlight-color: #bada55;
-}
-.thisSlide.foo {
-  -webkit-tap-highlight-color: #bada55;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-.beforeafter:before {
-  content: "before - ";
-  font-weight: bold;
-}
-.beforeafter:after {
-  content: " - after";
-  font-weight: bold;
-  }
-.active {
-  color: red; 
-  font-weight: bold; 
-  background-color: rgba(0,0,0,0.3);
-}
 #presentation {
-  -webkit-animation: none; 
   background-image: none;
   }
 </style>
@@ -163,10 +141,10 @@ E F
       <li>:hover</li>
       <li>:visited</li>
 
-      <li>:before</li>
-      <li>:after</li>
-      <li>:first-letter</li>
-      <li>:first-line</li>
+      <li>::before</li>
+      <li>::after</li>
+      <li>::first-letter</li>
+      <li>::first-line</li>
     </ul>
   </section>
 </div>
@@ -443,12 +421,12 @@ function hasaclass(selector) {
   <dt>E[attr^=val]</dt>
   <dd>Element E whose attribute <em>attr</em> starts with the value <em>val</em>.<br />
     <pre contenteditable class="example">a[href^=mailto] {background-image: url(emailicon.gif);}
-a[href^=http]:after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
+a[href^=http]::after {content: &quot; (&quot; attr(href) &quot;)&quot;;}</pre>
   </dd>
   <dt>E[attr$=val]</dt>
   <dd>Element E whose attribute <em>attr</em> ends in <em>val</em> . <br />
     <pre contenteditable class="example">a[href$=pdf] {background-image: url(pdficon.gif);}
-a[href$=pdf]:after {content: &quot; (PDF)&quot;;}</pre>
+a[href$=pdf]::after {content: &quot; (PDF)&quot;;}</pre>
   </dd>
   <dt>E[attr*=val]</dt>
   <dd>Element E whose attribute <em>attr </em>matches <em>val</em> anywhere within the attribute. Similar to E[attr~=val] above, except the <em>val</em> can be part of a word.</dd>
@@ -524,10 +502,10 @@ E:[att*=val]  <b class="notes">/* val is anywhere as a substring */</b>
 E:[att*=VAL i]  <b class="notes">/* anywhere as a case insenstive substring */</b></pre>
 <pre contenteditable style="clear:both">
 @media print{
-  abbr[title]:after {
+  abbr[title]::after {
     content: "(" attr(title) ")";
   }
-  a[href^=http]:after {
+  a[href^=http]::after {
     content: "(" attr(href) ")";
   }
 }</pre>
@@ -1250,20 +1228,20 @@ already exist.<br>
 
 
 
-<!-- :before and :after  -->
+<!-- ::before and ::after  -->
 <div class="slide normal">
      <header><h1>::before and ::after</h1></header>
 
 
      <section class="content">
-  <pre contenteditable>p:before {
+  <style contenteditable>p::before {
   content: "before content - ";
   font-weight: bold;
 }
-p:after{
+p::after{
   content: " - after content";
   font-weight: bold;
-}</pre>
+}</style>
 
 <pre contenteditable>&lt;p>the content&lt;/p></pre>
 
