@@ -1234,18 +1234,18 @@ already exist.<br>
 
 
      <section class="content">
-  <style contenteditable>p::before {
+  <style contenteditable>#x p::before {
   content: "before content - ";
   font-weight: bold;
 }
-p::after{
+#x p::after{
   content: " - after content";
   font-weight: bold;
 }</style>
 
-<pre contenteditable>&lt;p>the content&lt;/p></pre>
+<pre contenteditable>&lt;p id="x">the content&lt;/p></pre>
 
-<p class="beforeafter">the content</p>
+<p id="x" class="beforeafter">the content</p>
 <pre contenteditable>&lt;p>
     &lt;before&gt;before content - &lt;/before>
         the content
